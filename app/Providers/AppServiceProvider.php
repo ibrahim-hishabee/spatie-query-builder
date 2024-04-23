@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Spatie\QueryBuilder\QueryBuilderRequest;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        QueryBuilderRequest::setFieldsArrayValueDelimiter(',');   // Fields
+        QueryBuilderRequest::setSortsArrayValueDelimiter('|');    // Sorts
     }
 }
